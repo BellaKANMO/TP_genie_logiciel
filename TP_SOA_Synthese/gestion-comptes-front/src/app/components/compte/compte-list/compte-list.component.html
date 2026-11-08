@@ -1,0 +1,45 @@
+<h2>Liste des comptes par utilisateur</h2>
+<div>
+  <label>ID Utilisateur</label>
+  <input type="number" [(ngModel)]="utilisateurId">
+  <button (click)="rechercher()">Charger</button>
+</div>
+
+<table border="1" *ngIf="comptes.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Utilisateur</th>
+      <th>Numéro</th>
+      <th>Type</th>
+      <th>Solde</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let compte of comptes">
+      <td>{{ compte.id }}</td>
+      <td>{{ compte.nomUtilisateur }}</td>
+      <td>{{ compte.numeroCompte }}</td>
+      <td>{{ compte.typeCompte }}</td>
+      <td>{{ compte.solde }}</td>
+      <td>
+        <button (click)="voirCategorie(compte)">Voir catégorie SOAP</button>
+        <button (click)="modifier(compte)">Modifier</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="compteEnEdition">
+  <h3>Modifier le compte {{ compteEnEdition.id }}</h3>
+  <div><label>Numéro</label> <input type="text" [(ngModel)]="compteEnEdition.numeroCompte"></div>
+  <div><label>Type</label> <input type="text" [(ngModel)]="compteEnEdition.typeCompte"></div>
+  <div><label>Solde</label> <input type="number" [(ngModel)]="compteEnEdition.solde"></div>
+  <button (click)="enregistrerModification()">Mettre à jour</button>
+  <button (click)="annuler()">Annuler</button>
+</div>
+
+<div *ngIf="categorie">
+  <p><strong>Compte {{ categorie.numeroCompte }} :</strong> {{ categorie.categorie }} ({{ categorie.message }})</p>
+</div>

@@ -1,0 +1,12 @@
+<h2>Consultation SOAP depuis l'interface</h2>
+<div>
+  <label>ID Compte</label>
+  <input type="number" [(ngModel)]="compteId">
+  <button (click)="consulterCategorie()">Consulter catégorie</button>
+</div>
+
+<div *ngIf="resultat">
+  <p><strong>Numéro compte :</strong> {{ resultat.numeroCompte }}</p>
+  <p><strong>Catégorie :</strong> {{ resultat.categorie }}</p>
+  <p><strong>Message :</strong> {{ resultat.message }}</p>
+</div>

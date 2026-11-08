@@ -1,0 +1,20 @@
+<h2>Liste des utilisateurs</h2>
+<button (click)="chargerUtilisateurs()">Actualiser</button>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of utilisateurs">
+      <td>{{ user.id }}</td>
+      <td>{{ user.nom }}</td>
+      <td>{{ user.email }}</td>
+      <td><button (click)="supprimer(user.id)">Supprimer</button></td>
+    </tr>
+  </tbody>
+</table>

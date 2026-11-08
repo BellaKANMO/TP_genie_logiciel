@@ -1,0 +1,20 @@
+<h2>Ajout compte</h2>
+<form (ngSubmit)="enregistrer()">
+  <div>
+    <label>ID Utilisateur</label>
+    <input type="number" [(ngModel)]="utilisateurId" name="utilisateurId" required>
+  </div>
+  <div>
+    <label>Numéro compte</label>
+    <input type="text" [(ngModel)]="compte.numeroCompte" name="numeroCompte" required>
+  </div>
+  <div>
+    <label>Type compte</label>
+    <input type="text" [(ngModel)]="compte.typeCompte" name="typeCompte" required>
+  </div>
+  <div>
+    <label>Solde</label>
+    <input type="number" [(ngModel)]="compte.solde" name="solde" required>
+  </div>
+  <button type="submit">Enregistrer</button>
+</form>

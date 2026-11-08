@@ -1,0 +1,12 @@
+<h2>Ajout utilisateur</h2>
+<form (ngSubmit)="enregistrer()">
+  <div>
+    <label>Nom</label>
+    <input type="text" [(ngModel)]="utilisateur.nom" name="nom" required>
+  </div>
+  <div>
+    <label>Email</label>
+    <input type="email" [(ngModel)]="utilisateur.email" name="email" required>
+  </div>
+  <button type="submit">Enregistrer</button>
+</form>
